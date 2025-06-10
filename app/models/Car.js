@@ -13,31 +13,24 @@ export class Car {
     this.createdAt = new Date(data.createdAt)
     this.updatedAt = new Date(data.updatedAt)
     this.thatWeirdThingThatJakeKnowsAbout = data.__v
-    // this.creatorName = data.creator.name
-    this.creator = data.creator
+    this.creatorName = data.creator.name
+    this.creatorPicture = data.creator.picture || 'https://images.unsplash.com/photo-1533738363-b7f9aef128ce?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGNhdHxlbnwwfHwwfHx8MA%3D%3D'
   }
 
   get listingHTMLTemplate() {
     return `
-    <div class="col-md-6">
+    <div class="col-md-6 mb-3">
       <div class="position-relative shadow car-card" style="border-color: #000000;">
-        <img
-          src="https://images.unsplash.com/photo-1572109085775-689916e1df47?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8YXVkaSUyMHE1fGVufDB8MXwwfHx8Mg%3D%3D"
-          alt="2020 audi q5" class="car-img">
+        <img src="${this.imgUrl}" alt="${this.year} ${this.make} ${this.model}" class="car-img">
         <span class="car-money d-inline-block px-3 py-1 bg-dark text-success fs-2">$100000</span>
         <div class="p-3">
-          <h2>2020 audi q5</h2>
-          <p class="fs-4 fw-bold">V6 <span class="mdi mdi-engine"></span></p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum culpa in velit voluptas facilis
-            voluptatibus ut nihil. Libero, perferendis inventore.
-          </p>
+          <h2>${this.year} ${this.make} ${this.model}</h2>
+          <p class="fs-4 fw-bold">${this.engineType} <span class="mdi mdi-engine"></span></p>
+          <p>${this.description}</p>
           <div class="d-flex justify-content-between align-items-end">
             <div>
-              <img
-                src="https://plus.unsplash.com/premium_photo-1694626257552-576f66149ca8?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8ZGVtb258ZW58MHx8MHx8fDA%3D"
-                alt="speed demon" class="creator-img">
-              <p class="mb-0">Speed demon</p>
+              <img src="${this.creatorPicture}" alt="${this.creatorName.replace('<div>', '💩')}" class="creator-img">
+              <p class="mb-0">${this.creatorName.replace('<div>', '💩')}</p>
             </div>
             <small>Listed on 12/12/2000</small>
           </div>

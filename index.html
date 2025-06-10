@@ -34,8 +34,9 @@
     </section>
     <section class="container">
       <div class="row">
-        <div class="col-md-6">
-          <form onsubmit="app.carsController.submitCar()">
+        <div id="car-form-column" class="col-md-6">
+          <h2>Log in and list your car!</h2>
+          <form onsubmit="app.carsController.submitCar()" class="d-none">
             <div class="mb-3">
               <label for="car-make" class="form-label">Car Make</label>
               <input type="text" class="form-control" id="car-make" placeholder="Car Make..." required maxlength="500"

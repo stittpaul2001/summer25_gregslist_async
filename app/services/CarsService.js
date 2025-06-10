@@ -4,8 +4,10 @@ import { api } from "../utils/Axios.js";
 
 class CarsService {
   async deleteCar(carId) {
+    // NOTE for a delete request, you specify which resource you want to delete by including the id in the request URL
     const response = await api.delete(`api/cars/${carId}`)
     console.log('DELETED CAR', response.data);
+    // NOTE always update your state AFTER the network request
     const cars = AppState.cars
     const carIndex = cars.findIndex(car => car.id == carId)
     cars.splice(carIndex, 1)
@@ -14,6 +16,7 @@ class CarsService {
     // NOTE 2nd argument on post method becomes the payload (request body)
     const response = await api.post('api/cars', carData)
     console.log('CREATED CAR 🏎️✨', response.data);
+    // NOTE always update your state AFTER the network request
     const newCar = new Car(response.data)
     AppState.cars.push(newCar)
   }

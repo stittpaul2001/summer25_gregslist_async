@@ -31,6 +31,76 @@
       </div>
     </section>
     <section class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <form>
+            <div class="mb-3">
+              <label for="car-make" class="form-label">Car Make</label>
+              <input type="text" class="form-control" id="car-make" placeholder="Car Make..." required maxlength="500"
+                name="make">
+            </div>
+            <div class="mb-3">
+              <label for="car-model" class="form-label">Car Model</label>
+              <input type="text" class="form-control" id="car-model" placeholder="Car Model..." required maxlength="500"
+                name="model">
+            </div>
+            <div class="mb-3">
+              <label for="car-img-url" class="form-label">Car ImgUrl</label>
+              <input type="url" class="form-control" id="car-img-url" placeholder="Car ImgUrl..." required
+                maxlength="500" name="imgUrl">
+            </div>
+            <div class="mb-3">
+              <label for="car-price" class="form-label">Car Price</label>
+              <input type="number" class="form-control" id="car-price" placeholder="Car Price..." required
+                max="10000000" name="price">
+            </div>
+            <div class="mb-3">
+              <label for="car-year" class="form-label">Car Year</label>
+              <!-- TODO show how to set this using javascript -->
+              <input type="number" class="form-control" id="car-year" placeholder="Car Year..." required max="2026"
+                name="year">
+            </div>
+            <div class="mb-3 d-flex gap-3">
+              <div>
+                <label for="car-color" class="form-label">Car Color</label>
+                <input type="color" class="form-control form-control-color" id="car-color" value="#563d7c"
+                  title="Choose your color" name="color">
+              </div>
+              <div>
+                <label for="car-engine" class="form-label">Car Engine</label>
+                <select class="form-select" aria-label="Car Engine" id="car-engine" name="engine">
+                  <option selected value="unknown">Unknown</option>
+                  <option value="2 stroke">2 stroke</option>
+                  <option value="4 cylinder">4 cylinder</option>
+                  <option value="v6">v6</option>
+                  <option value="v8">v8</option>
+                  <option value="v10">v10</option>
+                  <option value="v12">v12</option>
+                  <option value="small">small</option>
+                  <option value="medium">medium</option>
+                  <option value="large">large</option>
+                  <option value="chunko">chunko</option>
+                </select>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="car-description" class="form-label">Car Description</label>
+              <textarea class="form-control" id="car-description" rows="3"></textarea>
+            </div>
+            <div class="text-end">
+              <button class="btn btn-outline-success" type="submit">
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="col-md-6">
+          <img
+            src="https://images.unsplash.com/photo-1541570213932-8cd806e3f8f6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHJvYWQlMjB0cmlwfGVufDB8fDB8fHww"
+            alt="a dude hanging out of a car" class="img-fluid w-100 object-fit-cover">
+        </div>
+      </div>
+
       <div id="car-listings" class="row">
         <!-- STUB car template -->
         <!-- <div class="col-md-6">

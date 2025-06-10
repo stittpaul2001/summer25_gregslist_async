@@ -20,9 +20,9 @@ export class Car {
   get listingHTMLTemplate() {
     return `
     <div class="col-md-6 mb-3">
-      <div class="position-relative shadow car-card" style="border-color: #000000;">
+      <div class="position-relative shadow car-card" style="border-color: ${this.color};">
         <img src="${this.imgUrl}" alt="${this.year} ${this.make} ${this.model}" class="car-img">
-        <span class="car-money d-inline-block px-3 py-1 bg-dark text-success fs-2">$100000</span>
+        <span class="car-money d-inline-block px-3 py-1 bg-dark text-success fs-2">$${this.price.toLocaleString()}</span>
         <div class="p-3">
           <h2>${this.year} ${this.make} ${this.model}</h2>
           <p class="fs-4 fw-bold">${this.engineType} <span class="mdi mdi-engine"></span></p>
@@ -32,7 +32,7 @@ export class Car {
               <img src="${this.creatorPicture}" alt="${this.creatorName.replace('<div>', '💩')}" class="creator-img">
               <p class="mb-0">${this.creatorName.replace('<div>', '💩')}</p>
             </div>
-            <small>Listed on 12/12/2000</small>
+            <small>Listed on ${this.createdAt.toLocaleDateString()}</small>
           </div>
         </div>
       </div>

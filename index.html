@@ -33,7 +33,7 @@
     <section class="container">
       <div class="row">
         <div class="col-md-6">
-          <form>
+          <form onsubmit="app.carsController.submitCar()">
             <div class="mb-3">
               <label for="car-make" class="form-label">Car Make</label>
               <input type="text" class="form-control" id="car-make" placeholder="Car Make..." required maxlength="500"
@@ -68,7 +68,7 @@
               </div>
               <div>
                 <label for="car-engine" class="form-label">Car Engine</label>
-                <select class="form-select" aria-label="Car Engine" id="car-engine" name="engine">
+                <select class="form-select" aria-label="Car Engine" id="car-engine" name="engineType">
                   <option selected value="unknown">Unknown</option>
                   <option value="2 stroke">2 stroke</option>
                   <option value="4 cylinder">4 cylinder</option>
@@ -85,7 +85,7 @@
             </div>
             <div class="mb-3">
               <label for="car-description" class="form-label">Car Description</label>
-              <textarea class="form-control" id="car-description" rows="3"></textarea>
+              <textarea class="form-control" id="car-description" rows="3" name="description"></textarea>
             </div>
             <div class="text-end">
               <button class="btn btn-outline-success" type="submit">

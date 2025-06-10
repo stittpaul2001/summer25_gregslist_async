@@ -5,6 +5,7 @@ import { logger } from '../utils/Logger.js'
 
 const SHOW_SETTINGS = false
 
+// NOTE car goes 🏎️
 function drawUser() {
   const user = AppState.identity ?? null
   const userAvatar = avatarTemplate(user)

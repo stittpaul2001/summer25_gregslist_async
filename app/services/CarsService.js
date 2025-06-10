@@ -3,6 +3,13 @@ import { Car } from "../models/Car.js";
 import { api } from "../utils/Axios.js";
 
 class CarsService {
+  async createCar(carData) {
+    // NOTE 2nd argument on post method becomes the payload (request body)
+    const response = await api.post('api/cars', carData)
+    console.log('CREATED CAR 🏎️✨', response.data);
+    const newCar = new Car(response.data)
+    AppState.cars.push(newCar)
+  }
   async getCars() {
     // NOTE axios is going to be used for network requests
     // NOTE you must specify which HTTP verb you are using by calling the correct method

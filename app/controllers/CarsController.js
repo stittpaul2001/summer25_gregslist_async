@@ -1,5 +1,6 @@
 import { AppState } from "../AppState.js";
 import { carsService } from "../services/CarsService.js";
+import { getFormData } from "../utils/FormHandler.js";
 import { Pop } from "../utils/Pop.js";
 
 export class CarsController {
@@ -20,6 +21,20 @@ export class CarsController {
       await carsService.getCars()
     } catch (error) {
       Pop.error(error, 'UH OH!', '<b>Could not get those cars!</b>')
+      console.error('getCars failed', error);
+    }
+  }
+
+  async submitCar() {
+    try {
+      event.preventDefault() // do not refresh page
+      const formElem = event.target // get the form that submitted
+      const carFormData = getFormData(formElem) // get the data out of the form
+      console.log('submitted car form', carFormData);
+      await carsService.createCar(carFormData)
+    } catch (error) {
+      Pop.error(error, 'UH OH', 'could not create that car')
+      console.error('createCar failed', error);
     }
   }
 

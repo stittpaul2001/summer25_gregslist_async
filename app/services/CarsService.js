@@ -3,6 +3,13 @@ import { Car } from "../models/Car.js";
 import { api } from "../utils/Axios.js";
 
 class CarsService {
+  async deleteCar(carId) {
+    const response = await api.delete(`api/cars/${carId}`)
+    console.log('DELETED CAR', response.data);
+    const cars = AppState.cars
+    const carIndex = cars.findIndex(car => car.id == carId)
+    cars.splice(carIndex, 1)
+  }
   async createCar(carData) {
     // NOTE 2nd argument on post method becomes the payload (request body)
     const response = await api.post('api/cars', carData)

@@ -38,5 +38,20 @@ export class CarsController {
     }
   }
 
+  async confirmCarDelete(carId) {
+    const confirmed = await Pop.confirm('Are you sure you want to delete this car?', 'It will be gone forever', 'Yes I am sure', 'No I have changed my mind')
+
+    if (!confirmed) {
+      return
+    }
+
+    try {
+      console.log('deleting car!', carId);
+      await carsService.deleteCar(carId)
+    } catch (error) {
+      Pop.error(error, 'UH OH', 'could not delete that car')
+      console.error('deleteCar failed', error);
+    }
+  }
 
 }

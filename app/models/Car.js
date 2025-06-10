@@ -32,7 +32,10 @@ export class Car {
               <img src="${this.creatorPicture}" alt="${this.creatorName.replace('<div>', '💩')}" class="creator-img">
               <p class="mb-0">${this.creatorName.replace('<div>', '💩')}</p>
             </div>
-            <small>Listed on ${this.createdAt.toLocaleDateString()}</small>
+            <div>
+              <button onclick="app.carsController.confirmCarDelete('${this.id}')" class="btn btn-outline-danger" type="button">Delete car</button>
+              <small>Listed on ${this.createdAt.toLocaleDateString()}</small>
+            </div>
           </div>
         </div>
       </div>

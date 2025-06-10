@@ -1,10 +1,12 @@
+import { Identity } from './Auth/Identity.js'
 import { Car } from './models/Car.js'
 import { EventEmitter } from './utils/EventEmitter.js'
 import { createObservableProxy } from './utils/ObservableProxy.js'
 
 class ObservableAppState extends EventEmitter {
 
-  // /**@type {import('./models/Example.js').Example[]} */
+  /*** @type {Identity}*/
+  identity = null
 
   /*** @type {Car[]}*/
   cars = []

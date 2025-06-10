@@ -1,3 +1,5 @@
+import { AppState } from "../AppState.js"
+
 export class Car {
   constructor(data) {
     this.id = data.id // important to store the id from the API, and not generate our own
@@ -33,13 +35,29 @@ export class Car {
               <p class="mb-0">${this.creatorName.replace('<div>', '💩')}</p>
             </div>
             <div>
-              <button onclick="app.carsController.confirmCarDelete('${this.id}')" class="btn btn-outline-danger" type="button">Delete car</button>
+              ${this.deleteButton}
               <small>Listed on ${this.createdAt.toLocaleDateString()}</small>
             </div>
           </div>
         </div>
       </div>
     </div>
+    `
+  }
+
+  get deleteButton() {
+    const identity = AppState.identity
+
+    if (identity == null) {
+      return ''
+    }
+
+    if (identity.id != this.creatorId) {
+      return ''
+    }
+
+    return `
+    <button onclick="app.carsController.confirmCarDelete('${this.id}')" class="btn btn-outline-danger" type="button">Delete car</button>
     `
   }
 }

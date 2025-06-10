@@ -3,10 +3,12 @@ import { logger } from '../utils/Logger.js';
 
 // @ts-ignore
 // eslint-disable-next-line no-undef
+// NOTE this exported variable allows us to use axios for network requests
+// NOTE you should always use this variable when interacting with the codeworks sandbox api
 export const api = axios.create({
-  baseURL: baseURL,
-  timeout: 8000,
-  withCredentials: true
+  baseURL: baseURL, // baseURL is actually imported from another module
+  timeout: 8000, // if no response from API in 8 seconds, throw an error
+  withCredentials: true // allows user authentication
 })
 
 api.interceptors.request.use(config => config, handleAxiosError)

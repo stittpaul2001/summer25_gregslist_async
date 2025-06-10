@@ -16,27 +16,34 @@ export class Car {
     // this.creatorName = data.creator.name
     this.creator = data.creator
   }
-}
 
-const carReference = {
-  "_id": "67c750a685d6f1c2c2f48c3a",
-  "id": "67c750a685d6f1c2c2f48c3a",
-  "make": "Audi",
-  "model": "Q5",
-  "imgUrl": "https://images.unsplash.com/photo-1572109085775-689916e1df47?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8YXVkaSUyMHE1fGVufDB8MXwwfHx8Mg%3D%3D",
-  "year": 2020,
-  "price": 10,
-  "description": "WHAT A CAR",
-  "color": "#131111",
-  "engineType": "v6",
-  "creatorId": "67c7497b9d0ebdf64186d8d6",
-  "createdAt": "2025-03-04T19:12:38.517Z",
-  "updatedAt": "2025-03-04T19:12:38.517Z",
-  "__v": 0,
-  "creator": {
-    "_id": "67c7497b9d0ebdf64186d8d6",
-    "name": "SPEED DEMON 💖💓😍😻",
-    "picture": "https://plus.unsplash.com/premium_photo-1694626257552-576f66149ca8?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8ZGVtb258ZW58MHx8MHx8fDA%3D",
-    "id": "67c7497b9d0ebdf64186d8d6"
-  },
+  get listingHTMLTemplate() {
+    return `
+    <div class="col-md-6">
+      <div class="position-relative shadow car-card" style="border-color: #000000;">
+        <img
+          src="https://images.unsplash.com/photo-1572109085775-689916e1df47?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8YXVkaSUyMHE1fGVufDB8MXwwfHx8Mg%3D%3D"
+          alt="2020 audi q5" class="car-img">
+        <span class="car-money d-inline-block px-3 py-1 bg-dark text-success fs-2">$100000</span>
+        <div class="p-3">
+          <h2>2020 audi q5</h2>
+          <p class="fs-4 fw-bold">V6 <span class="mdi mdi-engine"></span></p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum culpa in velit voluptas facilis
+            voluptatibus ut nihil. Libero, perferendis inventore.
+          </p>
+          <div class="d-flex justify-content-between align-items-end">
+            <div>
+              <img
+                src="https://plus.unsplash.com/premium_photo-1694626257552-576f66149ca8?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8ZGVtb258ZW58MHx8MHx8fDA%3D"
+                alt="speed demon" class="creator-img">
+              <p class="mb-0">Speed demon</p>
+            </div>
+            <small>Listed on 12/12/2000</small>
+          </div>
+        </div>
+      </div>
+    </div>
+    `
+  }
 }

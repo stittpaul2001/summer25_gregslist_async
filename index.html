@@ -23,7 +23,162 @@
   </header>
 
   <main>
-    <!-- TODO add houses stuff here! -->
+    <!-- TODO add Job stuff here! -->
+    <div class="container">
+      <header>
+        <div class="col-md-12">
+          <h1 class="my-3 fw-bold">Jobs</h1>
+        </div>
+      </header>
+    </div>
+    <section class="container">
+      <div class="row mb-3">
+        <div id="jobForm" class="col-md-6 card border border-3 border-info">
+          <h2>Log in and list your Job today!</h2>
+          <form onsubmit="app.jobsController.submitJob()" class="d-none mt-2 fs-4">
+            <div class="mb-3">
+              <label for="Job Title" class="form-label">Job Title</label>
+              <input type="text" class="form-control border border=1 border-dark" id="job-title" placeholder="Job Title"
+                required maxlength="50" minlength="0" name="Job-title">
+            </div>
+            <div class="mb-3">
+              <label for="job-location" class="form-label">Job Location</label>
+              <input type="text" class="form-control border border=1 border-dark" id="job-location"
+                placeholder="Location" required maxlength="50" minlength="0" name="job-location">
+            </div>
+            <div class="mb-3">
+              <label for="job-hours" class="form-label">Hours of work</label>
+              <input type="number" class="form-control border border=1 border-dark" id="job-hours"
+                placeholder="Hours to be worked" required maxlength="150" minlength="0" name="hours">
+            </div>
+            <div class="mb-3">
+              <label for="job-rate" class="form-label">Compensation </label>
+              <input type="number" class="form-control border border=1 border-dark" id="job-rate"
+                placeholder="# of Bathrooms" required maxlength="100000" minlength="0" name="job-rate">
+            </div>
+            <div class="mb-3">
+              <label for="job-company" class="form-label">Company</label>
+              <input type="text" class="form-control border border=1 border-dark" id="job-company" placeholder="Company"
+                required maxlength="150" minlength="0" name="job-company">
+            </div>
+            <div class="mb-3">
+              <label for="job-description" class="form-label">Job Description</label>
+              <textarea class="form-control border border=1 border-dark" id="job-description" rows="3"
+                name="Description"></textarea>
+            </div>
+            <div class="text-end">
+              <button class="btn btn-warning btn-outline-success fw-bold fs-4" type="submit">
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="col-md-6">
+          <img class="img-fluid w-100 object-fit-cover" alt="image saying to apply" src="Apply2day.avif">
+        </div>
+      </div>
+      <div id="jobsListings" class="row">
+        <!-- //STUB - Job Listings -->
+
+        <!-- <div class="col-md-6">
+          <div class="d-flex flex-column space-around">
+            <p class="fs-3">Company: </p>
+            <p class="fs-4">Located: </p>
+            <p class="fs-4">Job Title </p>
+            <p class="fs-4">Hours: </p>
+            <p class="fs-4">Pay: </p>
+            <p class="fs-3">Description: </p>
+          </div>
+        </div> -->
+      </div>
+
+      </div>
+
+    </section>
+
+
+    <div class="container">
+      <!-- TODO add houses stuff here! -->
+      <header>
+        <div class="col-md-12">
+          <h1 class="my-3 fw-bold">Houses</h1>
+        </div>
+      </header>
+    </div>
+    <section class="container">
+      <div class="row">
+        <div id="house-form" class="col-md-6 mb-3 card border border-2 border-dark">
+          <h2>Log in and list your House today!</h2>
+          <form onsubmit="app.houseController.submitHouse()" class="d-none mt-2 fs-4">
+            <div class="mb-3">
+              <label for="Year of house" class="form-label">Year of House</label>
+              <input type="text" class="form-control border border=1 border-dark" id="house-year" placeholder="Year"
+                required maxlength="2025" minlength="0" name="house-year">
+            </div>
+            <div class="mb-3">
+              <label for="house-levels" class="form-label">House Levels</label>
+              <input type="text" class="form-control border border=1 border-dark" id="house-levels" placeholder="Levels"
+                required maxlength="15" minlength="0" name="house-levels">
+            </div>
+            <div class="mb-3">
+              <label for="house-bedrooms" class="form-label">House Bedrooms</label>
+              <input type="number" class="form-control border border=1 border-dark" id="house-bedrooms"
+                placeholder="# of Bedrooms" required maxlength="50" minlength="0" name="house">
+            </div>
+            <div class="mb-3">
+              <label for="house-bathrooms" class="form-label">House Bathrooms</label>
+              <input type="number" class="form-control border border=1 border-dark" id="house-bathrooms"
+                placeholder="# of Bathrooms" required maxlength="30" minlength="0" name="house-bathrooms">
+            </div>
+            <div class="mb-3">
+              <label for="house-image" class="form-label">Picture of your House</label>
+              <input type="url" class="form-control border border=1 border-dark" id="House Image Url"
+                placeholder="house-imageUrl" required maxlength="50" minlength="0" name="house-image">
+            </div>
+            <div class="mb-3">
+              <label for="house-price" class="form-label">Price that you want to sell your House for</label>
+              <input type="number" class="form-control border border=1 border-dark" id="house-price" placeholder="Price"
+                required maxlength="10000000" minlength="0" name="house-price">
+            </div>
+            <div class="mb-3">
+              <label for="house-description" class="form-label">House Description</label>
+              <textarea class="form-control border border=1 border-dark" id="house-description" rows="3"
+                name="Description"></textarea>
+            </div>
+            <div class="text-end">
+              <button class="btn btn-warning btn-outline-success fw-bold fs-4" type="submit">
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="col-md-6">
+          <img class="img-fluid w-100 object-fit-cover" alt="" src="houseListing.avif">
+        </div>
+      </div>
+
+      <!-- //STUB - House Listing -->
+      <div id="houseListings" class="row">
+        <!-- <div class="col-md-10">
+          <div class="row bg-dark border">
+            <div class="col-md-4">
+              <img class="img-fluid" src="" alt="">
+            </div>
+            <div class="col-md-8">
+              <div class="d-flex flex-column space-around text-light">
+                <p class="fs-3">Year: </p>
+                <p class="fs-4">Description</p>
+                <p class="fs-4">Levels: </p>
+                <p class="fs-4">Bedrooms: </p>
+                <p class="fs-4">Bathrooms: </p>
+                <p class="fs-3">Price: </p>
+              </div>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </section>
+
 
     <section class="container">
       <div class="row">

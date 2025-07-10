@@ -20,8 +20,6 @@
     "titleBar.activeForeground": "#e7e7e7",
     "titleBar.inactiveBackground": "#141d2b99",
     "titleBar.inactiveForeground": "#e7e7e799",
-    "statusBar.debuggingBackground": "#2b2214",
-    "statusBar.debuggingForeground": "#e7e7e7",
     "activityBar.activeBackground": "#24344e",
     "activityBar.background": "#24344e",
     "activityBar.foreground": "#e7e7e7",

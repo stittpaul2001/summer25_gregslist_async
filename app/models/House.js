@@ -24,7 +24,7 @@ export class House {
     get houseTemplate() {
         return `
         <div class="col-12">
-            <div class="row border border-3 mt-2 mb-2"">
+            <div class="row border border-3 border-success mt-2 mb-2"">
                 <div class="col-md-4">
                     <img src="${this.imgUrl}" alt="a picture of a house" class=" border border-2 border-dark house-img">
                 </div>

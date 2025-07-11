@@ -17,7 +17,7 @@ export class House {
         this.creatorId = data.creatorId
         this.creator = data.creator
         this.creatorPicture = data.creator.picture
-        this.creatorName = data.creatorName
+        this.creatorName = data.creator.name
 
     }
 
@@ -45,7 +45,10 @@ export class House {
                                 <label for="floatingTextarea2Disabled"></label>
                             </div>
                             <div class="text-end d-flex justify-content-between">
+                                <div>
                                 <img src="${this.creatorPicture}" alt="${this.creatorName}" class="creator-img-new mb-2">
+                                <small class="fw-bold"> ${this.creatorName}</small>
+                                </div>
                                     <div class="text-end">
                                         <small class="text-end fw-bold">Listed on: ${this.createdAt.toLocaleDateString()}</small>
                                         <p class="text-end mt-4">${this.deleteButton}</p>
@@ -65,7 +68,7 @@ export class House {
             return ''
         }
         return `
-        <button onclick="app.carsController.confirmHouseDelete('${this.id}')" class="btn btn-outline-danger btn-dark" type="button">Delete house</button>`
+        <button onclick="app.housesController.deleteHouse('${this.id}')" class="btn btn-outline-danger btn-dark" type="button">Delete house</button>`
     }
 
 }

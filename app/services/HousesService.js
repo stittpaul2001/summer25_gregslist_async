@@ -5,13 +5,8 @@ import { api } from "../utils/Axios.js";
 
 
 class HousesService {
-  async createHouse(houseData) {
-    const response = await api.post('api/houses', houseData)
-    console.log('created House', response.data)
 
-    const newhouse = new House(response.data)
-    AppState.houses.push(newhouse)
-  }
+
   async deleteHouse(houseId) {
     const response = await api.delete(`api/houses/${houseId}`)
     console.log('deleted House', response.data)
@@ -21,10 +16,25 @@ class HousesService {
     houses.splice(houseIndex, 1)
   }
 
+
+
+
+  async createHouse(houseData) {
+    const response = await api.post('api/houses', houseData)
+    console.log('created House', response.data)
+
+    const house = new House(response.data)
+    AppState.houses.push(house)
+  }
+
+
+
+
+
   async getHouses() {
     const response = await api.get('api/houses')
     console.log('get houses', response.data)
-    const houses = response.data.map(pojo => new House(pojo))
+    const houses = response.data.map(houseData => new House(houseData))
     AppState.houses = houses
   }
 

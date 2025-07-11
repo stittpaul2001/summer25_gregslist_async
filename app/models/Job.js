@@ -13,7 +13,7 @@ export class Job {
     this.createdAt = new Date(data.createdAt)
     this.updatedAt = new Date(data.updatedAt)
     this.creator = data.creator
-    this.creatorName = data.creatorName
+    this.creatorName = data.creator.name
     this.creatorId = data.creatorId
     this.creatorPicture = data.creator.picture
 
@@ -38,6 +38,7 @@ export class Job {
               <p class="fs-5 text-center mb-4">Description: ${this.description} </p>
         <div class="text-center">
             <img src="${this.creatorPicture}" alt="${this.creatorName}" class="creator-img-new">
+            <p class="">${this.creatorName}</p>
         </div>
         <div class="d-flex justify-content-around">
             <p class="text-start">Listed on: ${this.createdAt.toLocaleDateString()}</p>

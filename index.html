@@ -112,18 +112,18 @@
     </div>
     <section class="container">
       <div class="row">
-        <div id="house-form" class="col-md-6 mb-3 card border border-2 border-dark">
+        <div id="houseForm" class="col-md-6 mb-3 card border border-2 border-dark">
           <h2>Log in and list your House today!</h2>
-          <form onsubmit="app.houseController.submitHouse()" class="d-none mt-2 fs-4">
+          <form onsubmit="app.housesController.submitHouse()" class="d-none mt-2 fs-4">
             <div class="mb-3">
-              <label for="Year of house" class="form-label">Year of House</label>
-              <input type="text" class="form-control border border=1 border-dark" id="year" placeholder="Year" required
-                maxlength="2025" minlength="0" name="year">
+              <label for="year" class="form-label">Year of House</label>
+              <input type="text" class="form-control border border=1 border-dark" id="year" placeholder="Year of House"
+                required maxlength="2025" minlength="0" name="year">
             </div>
             <div class="mb-3">
-              <label for="house-levels" class="form-label">House Levels</label>
-              <input type="text" class="form-control border border=1 border-dark" id="house-levels" placeholder="Levels"
-                required maxlength="15" minlength="0" name="house-levels">
+              <label for="levels" class="form-label">House Levels</label>
+              <input type="text" class="form-control border border=1 border-dark" id="levels" placeholder="House Levels"
+                required maxlength="15" minlength="0" name="levels">
             </div>
             <div class="mb-3">
               <label for="bedrooms" class="form-label">House Bedrooms</label>
@@ -136,22 +136,22 @@
                 placeholder="# of Bathrooms" required maxlength="30" minlength="0" name="bathrooms">
             </div>
             <div class="mb-3">
-              <label for="imgUrl" class="form-label">Picture of your House</label>
-              <input type="url" class="form-control border border=1 border-dark" id="imgUrl"
-                placeholder="house-imageUrl" required maxlength="50" minlength="0" name="imgUrl">
+              <label for="imgUrl" class="form-label">House Image</label>
+              <input type="url" class="form-control border border=1 border-dark" id="imgUrl" placeholder="imgUrl"
+                required maxlength="500" name="imgUrl">
             </div>
             <div class="mb-3">
-              <label for="house-price" class="form-label">Price that you want to sell your House for</label>
-              <input type="number" class="form-control border border=1 border-dark" id="house-price" placeholder="Price"
-                required maxlength="10000000" minlength="0" name="house-price">
+              <label for="price" class="form-label">Price that you want to sell your House for</label>
+              <input type="number" class="form-control border border=1 border-dark" id="price" placeholder="Price"
+                required maxlength="10000000" minlength="0" name="price">
             </div>
             <div class="mb-3">
-              <label for="house-description" class="form-label">House Description</label>
+              <label for="description" class="form-label">House Description</label>
               <textarea class="form-control border border=1 border-dark" id="house-description" rows="3"
-                name="Description"></textarea>
+                name="description"></textarea>
             </div>
             <div class="text-end">
-              <button class="btn btn-warning btn-outline-success fw-bold fs-4" type="submit">
+              <button class="btn btn-warning btn-outline-success fw-bold fs-4 mb-2" type="submit">
                 Submit
               </button>
             </div>

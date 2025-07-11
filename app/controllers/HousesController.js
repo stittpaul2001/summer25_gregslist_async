@@ -11,12 +11,21 @@ export class HousesController {
   constructor() {
 
     console.log('House Controller!!')
-    this.getHouses()
     AppState.on('houses', this.drawHouses)
-
     AppState.on('identity', this.drawHouses)
     AppState.on('identity', this.drawHouseForm)
+
+    this.getHouses()
   }
+
+
+  async drawHouseForm() {
+    const houseFormElem = document.getElementById('houseForm')
+    houseFormElem.querySelector('h2').classList.add('d-none')
+    houseFormElem.querySelector('form').classList.remove('d-none')
+  }
+
+
 
   async getHouses() {
     try {
@@ -27,36 +36,24 @@ export class HousesController {
     }
   }
 
-  drawHouses() {
-    console.log('House')
-    const houses = AppState.houses
-    let houseContent = ''
-    houses.forEach(house => houseContent += house.houseTemplate)
-    const houseElem = document.getElementById('houseListings')
-    houseElem.innerHTML = houseContent
-  }
-
-  drawHouseForm() {
-    const houseFormElem = document.getElementById('house-form')
-    houseFormElem.querySelector('h2').classList.add('d-none')
-    houseFormElem.querySelector('form').classList.remove('d-none')
-  }
-
   async submitHouse() {
+    console.log('submitHouse')
     try {
       event.preventDefault()
-      const formElem = event.target
-      const houseFormData = getFormData(formElem)
+      const houseForm = event.target
+      const houseData = getFormData(houseForm)
 
-      await housesService.createHouse(houseFormData)
+      await housesService.createHouse(houseData)
     } catch (error) {
       Pop.error(error, 'could not create your house!')
       console.error('createHouse failed', error)
+
     }
   }
 
-  async confirmHouseDelete(houseId) {
-    const confirmed = await Pop.confirm('Are you super-de-duper that you want to delete this House?', 'Yes, Delete', 'No, i think i want to keep it')
+
+  async deleteHouse(houseId) {
+    const confirmed = await Pop.confirm('Are you super-de-duper that you want to delete this House?')
     if (!confirmed) {
       return
     }
@@ -67,5 +64,17 @@ export class HousesController {
       console.error('deleteHouse failed', error)
     }
   }
+
+
+  drawHouses() {
+    console.log('getting houses')
+    const houses = AppState.houses
+    let houseContent = ''
+    houses.forEach(house => houseContent += house.houseTemplate)
+    const houseElem = document.getElementById('houseListings')
+    houseElem.innerHTML = houseContent
+  }
+
+
 
 }

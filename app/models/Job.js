@@ -55,7 +55,7 @@ export class Job {
       return ''
     }
     return `
-    <button onclick="app.carsController.confirmHouseDelete('${this.id}')" class="btn btn-outline-danger btn-dark" type="button">Delete house</button>`
+    <button onclick="app.jobsController.deleteJob('${this.id}')" class="btn btn-outline-danger btn-dark" type="button">Delete Job</button>`
   }
 
 }

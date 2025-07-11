@@ -11,6 +11,10 @@ class ObservableAppState extends EventEmitter {
   /*** @type {Identity}*/
   identity = null
 
+
+
+
+
   /*** @type {Car[]}*/
   cars = []
 

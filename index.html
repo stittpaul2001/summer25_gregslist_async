@@ -31,19 +31,19 @@
     <div class="container">
       <header>
         <div class="col-md-12">
-          <h1 class="my-3 fw-bold">Jobs</h1>
+          <h2 class="my-3 fw-bold">Jobs</h2>
         </div>
       </header>
     </div>
     <section class="container">
       <div class="row mb-3">
         <div id="jobForm" class="col-md-6 card border border-3 border-info">
-          <h2>Log in and list your Job today!</h2>
+          <h2>List your Job today!</h2>
           <form onsubmit="app.jobsController.submitJob()" class="d-none mt-2 fs-4">
             <div class="mb-3">
               <label for="Job Title" class="form-label">Job Title</label>
-              <input type="text" class="form-control border border=1 border-dark" id="job-title" placeholder="Job Title"
-                required maxlength="50" minlength="0" name="Job-title">
+              <input type="text" class="form-control border border=1 border-dark" id="jobTitle" placeholder="Job Title"
+                required maxlength="50" minlength="0" name="jobTitle">
             </div>
             <div class="mb-3">
               <label for="job-location" class="form-label">Job Location</label>
@@ -57,13 +57,13 @@
             </div>
             <div class="mb-3">
               <label for="job-rate" class="form-label">Compensation </label>
-              <input type="number" class="form-control border border=1 border-dark" id="job-rate"
-                placeholder="Job-Pay-rate" required maxlength="100000" minlength="0" name="job-rate">
+              <input type="number" class="form-control border border=1 border-dark" id="job-rate" placeholder="Job-Rate"
+                required maxlength="100000" minlength="0" name="rate">
             </div>
             <div class="mb-3">
-              <label for="job-company" class="form-label">Company</label>
-              <input type="text" class="form-control border border=1 border-dark" id="job-company" placeholder="Company"
-                required maxlength="150" minlength="0" name="job-company">
+              <label for="company" class="form-label">Company</label>
+              <input type="text" class="form-control border border=1 border-dark" id="company" placeholder="Company"
+                required maxlength="150" minlength="0" name="company">
             </div>
             <div class="mb-3">
               <label for="job-description" class="form-label">Job Description</label>
@@ -106,7 +106,7 @@
       <!-- TODO add houses stuff here! -->
       <header>
         <div class="col-md-12">
-          <h1 class="my-3 fw-bold">Houses</h1>
+          <h2 class="my-3 fw-bold">Houses</h2>
         </div>
       </header>
     </div>
@@ -117,8 +117,8 @@
           <form onsubmit="app.houseController.submitHouse()" class="d-none mt-2 fs-4">
             <div class="mb-3">
               <label for="Year of house" class="form-label">Year of House</label>
-              <input type="text" class="form-control border border=1 border-dark" id="house-year" placeholder="Year"
-                required maxlength="2025" minlength="0" name="house-year">
+              <input type="text" class="form-control border border=1 border-dark" id="year" placeholder="Year" required
+                maxlength="2025" minlength="0" name="year">
             </div>
             <div class="mb-3">
               <label for="house-levels" class="form-label">House Levels</label>
@@ -126,19 +126,19 @@
                 required maxlength="15" minlength="0" name="house-levels">
             </div>
             <div class="mb-3">
-              <label for="house-bedrooms" class="form-label">House Bedrooms</label>
-              <input type="number" class="form-control border border=1 border-dark" id="house-bedrooms"
-                placeholder="# of Bedrooms" required maxlength="50" minlength="0" name="house">
+              <label for="bedrooms" class="form-label">House Bedrooms</label>
+              <input type="number" class="form-control border border=1 border-dark" id="bedrooms"
+                placeholder="# of Bedrooms" required maxlength="50" minlength="0" name="bedrooms">
             </div>
             <div class="mb-3">
-              <label for="house-bathrooms" class="form-label">House Bathrooms</label>
-              <input type="number" class="form-control border border=1 border-dark" id="house-bathrooms"
-                placeholder="# of Bathrooms" required maxlength="30" minlength="0" name="house-bathrooms">
+              <label for="bathrooms" class="form-label">House Bathrooms</label>
+              <input type="number" class="form-control border border=1 border-dark" id="bathrooms"
+                placeholder="# of Bathrooms" required maxlength="30" minlength="0" name="bathrooms">
             </div>
             <div class="mb-3">
-              <label for="house-image" class="form-label">Picture of your House</label>
-              <input type="url" class="form-control border border=1 border-dark" id="House Image Url"
-                placeholder="house-imageUrl" required maxlength="50" minlength="0" name="house-image">
+              <label for="imgUrl" class="form-label">Picture of your House</label>
+              <input type="url" class="form-control border border=1 border-dark" id="imgUrl"
+                placeholder="house-imageUrl" required maxlength="50" minlength="0" name="imgUrl">
             </div>
             <div class="mb-3">
               <label for="house-price" class="form-label">Price that you want to sell your House for</label>

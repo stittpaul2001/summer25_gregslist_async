@@ -11,11 +11,11 @@ export class HousesController {
   constructor() {
 
     console.log('House Controller!!')
+    this.getHouses()
     AppState.on('houses', this.drawHouses)
 
     AppState.on('identity', this.drawHouses)
     AppState.on('identity', this.drawHouseForm)
-    this.getHouses()
   }
 
   async getHouses() {
@@ -28,7 +28,7 @@ export class HousesController {
   }
 
   drawHouses() {
-    console.log(House)
+    console.log('House')
     const houses = AppState.houses
     let houseContent = ''
     houses.forEach(house => houseContent += house.houseTemplate)

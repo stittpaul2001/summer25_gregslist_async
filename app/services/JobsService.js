@@ -4,6 +4,7 @@ import { api } from "../utils/Axios.js"
 
 
 class JobsService {
+
   async deleteJob(jobId) {
     const response = await api.delete(`api/jobs/${jobId}`)
     console.log('deleted Job', response.data)
@@ -15,18 +16,23 @@ class JobsService {
   }
 
 
+
+
   async createJob(jobData) {
     const response = await api.post('api/jobs', jobData)
     console.log('created Job', response.data)
 
-    const newjob = new Job(response.data)
-    AppState.jobs.push(newjob)
+    const job = new Job(response.data)
+    AppState.jobs.push(job)
   }
+
+
+
 
   async getJobs() {
     const response = await api.get('api/jobs')
     console.log('got jobs!!', response.data)
-    const jobs = response.data.map(pojo => new Job(pojo))
+    const jobs = response.data.map(jobData => new Job(jobData))
     AppState.jobs = jobs
   }
 

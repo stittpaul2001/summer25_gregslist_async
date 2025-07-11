@@ -36,19 +36,20 @@ export class JobsController {
   async submitJob() {
     try {
       event.preventDefault()
-      const formElem = event.target
-      const jobFormData = getFormData(formElem)
+      const jobForm = event.target
+      const jobData = getFormData(jobForm)
 
-      await jobsService.createJob(jobFormData)
+      await jobsService.createJob(jobData)
     } catch (error) {
       Pop.error(error, 'cant create a Job')
       console.error(error, 'failed to createJob')
+      window.location.reload()
     }
   }
 
-  async confirmJobDelte(jobId) {
-    const confrimed = await Pop.confirm('Are you sure you want to delete this job?', 'Yes, Delete', 'No, i want to leave it')
-    if (!confrimed) {
+  async deleteJob(jobId) {
+    const confirmed = await Pop.confirm('Are you sure you want to delete this job?')
+    if (!confirmed) {
       return
     }
     try {
